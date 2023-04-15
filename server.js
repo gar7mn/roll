@@ -1,7 +1,7 @@
 
 const express = require('express')
 const PORT = 8080
-const HOST = '128.206.40.200'
+const HOST = '0.0.0.0'
 
 const app = express()
 app.set('view-engine','ejs')
