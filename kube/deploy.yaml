@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rollingout
+spec:
+  selector:
+    matchLabels:
+      app: rollingout
+  template:
+    metadata:
+      labels:
+        app: rollingout
+    spec:
+      containers:
+      - name: rollingout
+        image: gar7mn/roll
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "500m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+
+
