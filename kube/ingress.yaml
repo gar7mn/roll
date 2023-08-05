@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: haproxy
+  name: rollingout
+spec:
+  rules:
+  - host: roll.nrp-nautilus.io
+    http:
+      paths:
+      - backend:
+          service:
+            name: rollingout
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - roll-roll.nrp-nautilus.io
